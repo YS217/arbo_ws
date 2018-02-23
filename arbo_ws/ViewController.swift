@@ -52,17 +52,25 @@ class ViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDe
 		//Si présence de plusieurs NSOutlineView on contrôle celle qui à déclenché le traitement
 		switch outlineView {
 		case profilsOutlineView:
+			let noeud = notification.userInfo!["NSObject"] as! NSTreeNode
+			
+			profilsTreeController.setSelectionIndexPath(noeud.indexPath)
 			let node = (notification.userInfo!["NSObject"] as! NSTreeNode).representedObject as! Arborescence
 			if node.children.count == 0{
 				chargerProfils(node: node)
 			}
-			
 		default: break
-			//texteNode.stringValue = ""
 		}
 	
 	}
-
+	
+	
+	
+	
+	func outlineView(_ outlineView: NSOutlineView, toolTipFor cell: NSCell, rect: NSRectPointer, tableColumn: NSTableColumn?, item: Any, mouseLocation: NSPoint) -> String {
+		print("tooltip")
+		return("ok")
+	}
 	
 	//
 	// MARK: - Mes methodes
@@ -75,7 +83,6 @@ class ViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDe
 		webService.request(
 			url: "http://localhost/~yann/DEV/tamara217/ressources/php/gestion/profiler/recup_profils.php",
 			method: "POST",
-			//idUtilisateur=1&affichageDatas=false&node=65535
 			params: ["idUtilisateur":"1", "affichageDatas":false, "node":node.id],
 			completionHandler: { (result) in
 				switch result {
@@ -92,11 +99,16 @@ class ViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDe
 					
 					for elementJson in json {
 						
+						//Suppression des balises html contenues dans le tootips
+						var toolTip = (elementJson["qtip"] ?? "") as! String
+						toolTip = toolTip.replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<br/>", with: "\n")
+						
 						let element = Arborescence(
 							id: elementJson["id"] as! String,
 							pid: elementJson["pid"] as! String,
 							nomProfil: "",
 							text: elementJson["text"] as! String,
+							qtip: toolTip  ,
 							leaf: Bool((elementJson["leaf"] ?? false) as! Bool)
 						)
 						
@@ -109,8 +121,6 @@ class ViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDe
 				}
 			}
 		)
-		print("AAAAAA")
-		
 	}
 }
 

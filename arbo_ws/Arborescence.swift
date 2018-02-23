@@ -23,9 +23,10 @@ class Arborescence: NSObject {
 	@objc dynamic var text: String
 	@objc dynamic var leaf: Bool
 	@objc dynamic var icon: NSImage
+	@objc dynamic var qtip: String
 	@objc dynamic var children = [Arborescence]()
 	
-	init(id:String, pid:String, nomProfil:String, text:String, leaf: Bool = false){
+	init(id:String, pid:String, nomProfil:String, text:String, qtip: String = "",leaf: Bool = false){
 		
 		self.id = id
 		self.pid = pid
@@ -37,6 +38,7 @@ class Arborescence: NSObject {
 		self.lectureSeuleAutresUtilisateurs = ""
 		self.text = text
 		self.leaf = leaf
+		self.qtip = qtip
 		if(leaf == false){
 			icon = NSWorkspace.shared.icon(forFileType: NSFileTypeForHFSTypeCode(OSType(kGenericFolderIcon)))
 			icon.size = NSMakeSize(kIconSmallImageSize, kIconSmallImageSize)
