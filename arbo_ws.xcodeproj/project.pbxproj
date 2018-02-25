@@ -13,6 +13,7 @@
 		AA0FE18C2039BC3700A75489 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA0FE18A2039BC3700A75489 /* Main.storyboard */; };
 		AA0FE1952039BC4C00A75489 /* Arborescence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FE1942039BC4C00A75489 /* Arborescence.swift */; };
 		AA0FE1972039C91D00A75489 /* webService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0FE1962039C69800A75489 /* webService.swift */; };
+		AAD771572040674600D065CE /* ProfilsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD771562040674600D065CE /* ProfilsClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		AA0FE18E2039BC3700A75489 /* arbo_ws.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = arbo_ws.entitlements; sourceTree = "<group>"; };
 		AA0FE1942039BC4C00A75489 /* Arborescence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arborescence.swift; sourceTree = "<group>"; };
 		AA0FE1962039C69800A75489 /* webService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = webService.swift; sourceTree = "<group>"; };
+		AAD771562040674600D065CE /* ProfilsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilsClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				AA0FE18E2039BC3700A75489 /* arbo_ws.entitlements */,
 				AA0FE1962039C69800A75489 /* webService.swift */,
 				AA0FE1942039BC4C00A75489 /* Arborescence.swift */,
+				AAD771562040674600D065CE /* ProfilsClass.swift */,
 			);
 			path = arbo_ws;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				AA0FE1872039BC3700A75489 /* ViewController.swift in Sources */,
 				AA0FE1852039BC3700A75489 /* AppDelegate.swift in Sources */,
 				AA0FE1972039C91D00A75489 /* webService.swift in Sources */,
+				AAD771572040674600D065CE /* ProfilsClass.swift in Sources */,
 				AA0FE1952039BC4C00A75489 /* Arborescence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

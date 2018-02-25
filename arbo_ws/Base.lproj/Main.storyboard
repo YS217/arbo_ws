@@ -704,26 +704,26 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="arbo_ws" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VC1" id="XfG-lQ-9wD" customClass="ViewController" customModule="arbo_ws" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="504"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <rect key="frame" x="0.0" y="0.0" width="460" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                         <subviews>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="17" horizontalPageScroll="10" verticalLineScroll="17" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Sz-MD-VS0">
-                                <rect key="frame" x="20" y="20" width="440" height="464"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <rect key="frame" x="20" y="20" width="420" height="464"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="Z5Y-sN-ciA">
-                                    <rect key="frame" x="1" y="1" width="438" height="462"/>
+                                    <rect key="frame" x="1" y="1" width="418" height="462"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="14" outlineTableColumn="w6o-bI-Wa9" id="eCT-ii-Q1K">
-                                            <rect key="frame" x="0.0" y="0.0" width="438" height="462"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" emptySelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="14" outlineTableColumn="w6o-bI-Wa9" id="eCT-ii-Q1K" customClass="ProfilsClass">
+                                            <rect key="frame" x="0.0" y="0.0" width="418" height="462"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <size key="intercellSpacing" width="3" height="0.0"/>
                                             <color key="backgroundColor" name="_sourceListBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn identifier="text" width="435" minWidth="16" maxWidth="1000" id="w6o-bI-Wa9">
+                                                <tableColumn identifier="text" width="415" minWidth="16" maxWidth="1000" id="w6o-bI-Wa9">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -737,11 +737,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="Profils" id="1Kn-GW-9iu">
-                                                            <rect key="frame" x="1" y="0.0" width="435" height="17"/>
+                                                            <rect key="frame" x="1" y="0.0" width="415" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField identifier="Profils" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdh-j6-ZQ0">
-                                                                    <rect key="frame" x="0.0" y="1" width="435" height="14"/>
+                                                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdh-j6-ZQ0">
+                                                                    <rect key="frame" x="0.0" y="1" width="415" height="14"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Profils" id="1pm-iD-ogg">
                                                                         <font key="font" metaFont="smallSystemBold"/>
@@ -755,7 +755,7 @@
                                                             </connections>
                                                         </tableCellView>
                                                         <tableCellView identifier="text" id="W9C-v1-1TX">
-                                                            <rect key="frame" x="1" y="17" width="435" height="17"/>
+                                                            <rect key="frame" x="1" y="17" width="415" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R2U-dL-pS5">
@@ -767,7 +767,7 @@
                                                                     </connections>
                                                                 </imageView>
                                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jNZ-al-Fn2">
-                                                                    <rect key="frame" x="25" y="0.0" width="410" height="17"/>
+                                                                    <rect key="frame" x="25" y="0.0" width="390" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="uAu-fQ-G7i">
                                                                         <font key="font" metaFont="system"/>
@@ -775,8 +775,8 @@
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                     <connections>
-                                                                        <binding destination="W9C-v1-1TX" name="value" keyPath="objectValue.text" id="W7w-Q5-yms"/>
                                                                         <binding destination="W9C-v1-1TX" name="toolTip" keyPath="objectValue.qtip" id="Zia-eX-wiR"/>
+                                                                        <binding destination="W9C-v1-1TX" name="value" keyPath="objectValue.text" id="W7w-Q5-yms"/>
                                                                     </connections>
                                                                 </textField>
                                                             </subviews>
@@ -811,14 +811,98 @@
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="menuContextDossier" destination="7pE-PD-f3f" id="gHj-9E-0u9"/>
+                        <outlet property="menuContextProfil" destination="xJM-8E-ree" id="w4t-sv-fbj"/>
                         <outlet property="profilsOutlineView" destination="eCT-ii-Q1K" id="eWU-pY-5OY"/>
                         <outlet property="profilsTreeController" destination="sEJ-Zo-Fa3" id="r7e-09-bCw"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <menu identifier="menuContextProfil" id="xJM-8E-ree">
+                    <items>
+                        <menuItem title="Supprimer le profil" id="cWY-tG-qhF">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="suppirmerProfil:" target="XfG-lQ-9wD" id="Px3-ID-snL"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Dupliquer le profil" id="qzj-T7-TCZ">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Rendre privé" id="TJy-PB-eQx">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Rendre public" id="ysl-Ud-poD">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <menu key="submenu" title="Rendre public" id="6He-oi-kQP">
+                                <items>
+                                    <menuItem title="Modifiable par les autres utilisateurs" id="d1z-eA-Dy9">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                    <menuItem title="Non modifiable par les autres utilisateurs" id="1mx-Y7-YhK">
+                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                    </menuItem>
+                                </items>
+                            </menu>
+                        </menuItem>
+                        <menuItem title="Déplacer vers..." id="8bI-AF-12N">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Renommer le profil..." id="enS-6f-Wns">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="yEf-Ff-byL"/>
+                        <menuItem title="Exporter le profil..." id="PgJ-eg-zzU">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="T04-KU-iA3"/>
+                        <menuItem title="Commenter le profil..." id="QEP-yV-GJb">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                    </items>
+                    <connections>
+                        <outlet property="delegate" destination="XfG-lQ-9wD" id="f2O-yS-H43"/>
+                    </connections>
+                </menu>
+                <menu identifier="menuContextDossier" id="7pE-PD-f3f">
+                    <items>
+                        <menuItem title="Créer un sous-dossier" id="JrL-hm-ycE">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                            <connections>
+                                <action selector="creerSousDossier:" target="XfG-lQ-9wD" id="93S-qc-T6e"/>
+                            </connections>
+                        </menuItem>
+                        <menuItem title="Supprimer le dossier..." id="6QM-m3-4Fy">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Déplacer vers..." id="q0P-hi-95Y">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Renommer le dossier..." id="zlW-TR-Hdk">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Actualiser le dossier..." id="tkB-TK-9c4">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="cP2-lf-DzH"/>
+                        <menuItem title="Créer un profil..." id="zPz-es-Co2">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem isSeparatorItem="YES" id="Cpb-Ud-b1b"/>
+                        <menuItem title="Exporter le dossier..." id="W0t-7l-4uy">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                        <menuItem title="Importer dans le dossier..." id="p5v-hW-CY0">
+                            <modifierMask key="keyEquivalentModifierMask"/>
+                        </menuItem>
+                    </items>
+                    <connections>
+                        <outlet property="delegate" destination="eCT-ii-Q1K" id="Fw8-ao-jy0"/>
+                    </connections>
+                </menu>
                 <treeController objectClassName="Arborescence" childrenKeyPath="children" leafKeyPath="leaf" id="sEJ-Zo-Fa3"/>
             </objects>
-            <point key="canvasLocation" x="75" y="772"/>
+            <point key="canvasLocation" x="65" y="987"/>
         </scene>
     </scenes>
     <resources>

@@ -10,10 +10,10 @@ import Cocoa
 
 class ViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDelegate {
 
-	@IBOutlet var profilsTreeController: NSTreeController!
-
-	@IBOutlet weak var profilsOutlineView: NSOutlineView!
-	
+	@IBOutlet weak var profilsTreeController: NSTreeController!
+	@IBOutlet weak var profilsOutlineView: ProfilsClass!
+	@IBOutlet weak var menuContextProfil: NSMenu!
+	@IBOutlet weak var menuContextDossier: NSMenu!
 	
 	
 	override func viewDidLoad() {
@@ -22,25 +22,26 @@ class ViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDe
 		// Do any additional setup after loading the view.
 		
 		let racine = Arborescence(id: "65535", pid: "", nomProfil: "", text: "Racine")
-		/*let profil = Arborescence(id: "P333", pid: "65535", nomProfil: "Mon profil", text: "Mon Profil", leaf: true)
-		racine.children = [profil]*/
-		
-		
 		profilsTreeController.addObject(racine)
+		
+		profilsOutlineView.treeController = profilsTreeController
+		profilsOutlineView.menuContextProfil = menuContextProfil
+		profilsOutlineView.menuContextDossier = menuContextDossier
+		
 	}
-	
-	
 
+	
 	override var representedObject: Any? {
 		didSet {
 		// Update the view, if already loaded.
 		}
 	}
 
+	
+	
 	//
 	// MARK: - Delegate du NSOutlineView
 	//
-	
 	//Déclenché quand un élément est ouvert
 	func outlineViewItemWillExpand(_ notification: Notification) {
 		
@@ -48,12 +49,11 @@ class ViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDe
 		guard let outlineView = notification.object as? NSOutlineView else {
 			return
 		}
-
-		//Si présence de plusieurs NSOutlineView on contrôle celle qui à déclenché le traitement
+		
+		//Si présence de plusieurs NSOutlineView on contrôle celle qui a déclenché le traitement
 		switch outlineView {
 		case profilsOutlineView:
 			let noeud = notification.userInfo!["NSObject"] as! NSTreeNode
-			
 			profilsTreeController.setSelectionIndexPath(noeud.indexPath)
 			let node = (notification.userInfo!["NSObject"] as! NSTreeNode).representedObject as! Arborescence
 			if node.children.count == 0{
@@ -61,21 +61,33 @@ class ViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDe
 			}
 		default: break
 		}
-	
+		
 	}
 	
 	
+	//
+	// MARK: - Actions
+	//
+	@IBAction func creerSousDossier(_ sender: NSMenuItem) {
+
+		if self.profilsTreeController.selectedNodes.count>0{
+			let node = self.profilsTreeController.selectedObjects[0] as! Arborescence
+			print(node.text)
+		}
+		
+	}
 	
-	
-	func outlineView(_ outlineView: NSOutlineView, toolTipFor cell: NSCell, rect: NSRectPointer, tableColumn: NSTableColumn?, item: Any, mouseLocation: NSPoint) -> String {
-		print("tooltip")
-		return("ok")
+	@IBAction func suppirmerProfil(_ sender: NSMenuItem) {
+		
+		if self.profilsTreeController.selectedNodes.count>0{
+			let node = self.profilsTreeController.selectedObjects[0] as! Arborescence
+			print(node.text)
+		}
 	}
 	
 	//
 	// MARK: - Mes methodes
 	//
-	
 	func chargerProfils(node: Arborescence){
 		
 		let webService = WebService()
@@ -94,7 +106,7 @@ class ViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDe
 					//Conversion des données sous la format d'un objet
 					let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [[String: Any]]
 					
-					print("JSON: ", json)
+					//print("JSON: ", json)
 					
 					
 					for elementJson in json {
@@ -119,8 +131,9 @@ class ViewController: NSViewController, NSOutlineViewDataSource, NSOutlineViewDe
 				case .Failure(let error):
 					NSAlert(error: error).runModal()
 				}
-			}
+		}
 		)
 	}
+	
 }
 
